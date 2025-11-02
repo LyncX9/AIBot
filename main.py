@@ -5,6 +5,7 @@ import json
 import os
 os.environ["DISCORD_NO_AUDIO"] = "1"
 import discord
+from discord.ext import commands
 from langchain.memory import ConversationBufferMemory
 from keep_alive import keep_alive
 from dotenv import load_dotenv
@@ -123,6 +124,7 @@ async def on_message(message):
 keep_alive()
 
 bot.run(BOT_TOKEN)
+
 
 
 
