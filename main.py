@@ -5,8 +5,11 @@ import json
 import os
 import discord
 from langchain.memory import ConversationBufferMemory
+from keep_alive import keep_alive
 from dotenv import load_dotenv
 from trending_fetcher import VIRAL_TOPICS, start_trending_loop
+
+
 
 load_dotenv()
 openai.api_key = os.getenv("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")
@@ -113,4 +116,7 @@ async def on_message(message):
             reply += random.choice([" 😂", " 😅", " 😎", " 🔥"])
         await message.channel.send(reply)
 
+keep_alive()
+
 bot.run(BOT_TOKEN)
+
